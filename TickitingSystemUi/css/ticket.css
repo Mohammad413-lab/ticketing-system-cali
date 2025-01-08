@@ -74,8 +74,8 @@
 
 .closedbtn{
     display: block;
-    width: 100%;
-    height: 20px;
+    min-width: 100px;
+    height: 30px;
     background: #FF7F7F;
     color: whitesmoke;
     border: none;
@@ -87,7 +87,7 @@
     }
 
 .textareaone{
-   width: 688px;
+   width: 700px;
    height: 100px;
    box-shadow: 0 5px 9px #E8E8E8; 
    border: 0;
@@ -109,24 +109,12 @@ textarea::placeholder{
 }
 
 .textareaone:focus{
-    width: 688px;
-    height: 100px;
     box-shadow: 0px 0px 5px   #0fc0fc;
-    border: 0;
-    border-radius: 2px;
-    outline: none;
-    margin-bottom: 10px;
-    font-family: sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    background: white;
-    padding: 8px;
-    
  }
  .textareatwo{
     display: block;
-    width: 400px;
-    height: 40px;
+    width: 350px;
+    height: 100px;
     box-shadow: 0 5px 9px #E8E8E8; 
     border: 0;
     border-radius: 2px;
@@ -141,19 +129,7 @@ textarea::placeholder{
     
  }
  .textareatwo:focus{
-    width: 400px;
-    height: 40px;
-    box-shadow: 0px 0px 5px   #0fc0fc;
-    border: 0;
-    border-radius: 2px;
-    outline: none;
-    font-family: sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    background: white;
-    padding: 8px;
- 
-    
+    box-shadow: 0px 0px 5px   #0fc0fc; 
  }
  .to-margintwo{
     margin-right: 2px;
@@ -205,7 +181,7 @@ textarea::placeholder{
 
 
 .scrolldesc::-webkit-scrollbar {
-    width: 10px; 
+    width: 2px; 
     height: 5px;
    
    
@@ -242,9 +218,58 @@ textarea::placeholder{
     color:#6699cc ;
 }
 
+.txtthelpdisk{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px;
+    background:linear-gradient(to bottom right,#2e86c1,#1BA8E0 ,#3498db ,#87DAF6)  ;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.editingmessage{
+    display: none;
+    position: absolute;
+    top: 20%;
+    width: 400px;
+   
+}
+
+
+
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
+.stack-container-update{
+
+    background: white;
+}
+ .txtthelpdisk{
+    font-size: 20px;
+
+ }   
+.textareatwo{
+      width: 400px;
+      height: 100px;
+      font-size: 22px;
+      
+    }    
+.input3::placeholder{
+  font-size: 22px;
+
+}
+.input3{
+    font-size: 22px;
+    width: 370px;
+}
+   
+.p-info{
+    font-size: 23px;
+}
+.p-info-t{
+    font-size: 22px;
+}   
  .txt2{
     font-size: 25px;
  }   
@@ -252,6 +277,11 @@ and (max-device-width : 480px) {
 .input2{
     font-size: 25px;
 } 
+.closedbtn{
+    font-size: 20px;
+    min-height: 35px;
+}
+
 .input2::placeholder{
     font-size: 25px;
 }
@@ -289,6 +319,13 @@ and (max-device-width : 480px) {
 .pone{
     font-size: 25px;
 
+}
+.notestyle{
+    font-size: 25px;
+    color: gray;
+}
+.editingmessage{
+    width: 100vw;
 }
 }
 

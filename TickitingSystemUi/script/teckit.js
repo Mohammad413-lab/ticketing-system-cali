@@ -13,7 +13,7 @@ function checkedInput(input,errorInput){
 
         return check;
        }else{
-       
+           
            errorInput.style.display="block";
           return check;
        }
@@ -36,6 +36,15 @@ function tekitStatusBtn(statusButton,status){
 
 }
 
+function checkedRadio(prioriteysHelpDisks,valuee){
+    for(let i=0;i<prioriteysHelpDisks.length;i++){
+        console.log("step"+i+" "+valuee +"real value= "+prioriteysHelpDisks[i].value);
+        if(prioriteysHelpDisks[i].value==valuee){
+            prioriteysHelpDisks[i].checked=true;
+            break;
+        }
+    }
+}
 
 
 
@@ -78,21 +87,30 @@ let cancelRateBtn=document.getElementById("cancelratebtn");
 let rateNumber=0;
 
 let stackCupdate=document.getElementsByClassName("stack-container-update")[0];
- 
+let editingmsg=document.getElementsByClassName("editingmessage")[0];
 let textContainer=document.getElementById("txtcontainer");
 
-let rateOrUpdatBtn=document.getElementById("ratebtnok");
+let rateBtn=document.getElementById("ratebtnok");
 
-let listOfReviewd=[new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","solved"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","in review"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","pending"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","solved"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","in review"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","pending"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","solved"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","in review"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","pending"),
-    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","","","pending")
+let cancelHelpDeskBtn=document.getElementById("cancelupdate");
+
+let titleHelpDisk=document.getElementById("titlehelp");
+let descriptionHelpDesk=document.getElementById("descreiptionhelp");
+let prioriteysHelpDisk=document.getElementsByName("priorityhelpdisk");
+
+
+
+
+let listOfReviewd=[new TeckitModel(0,"issue software",new UserInfoModel("sami naser saad",0),"Some issue","low","","solved"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","medium","","in review"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","high","","pending"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","medium","","solved"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","low","","in review"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","high","","pending"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","medium","","solved"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","low","","in review"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","high","","pending"),
+    new TeckitModel("","issue",new UserInfoModel("sami naser saad",0),"Some issue","medium","","pending")
 ];
 let statusColor={
   "solved":green,
@@ -104,22 +122,21 @@ let buttonStatus={
     "blur":function(){
         blurContainer(tBox,'blur(5px)','none'); 
     },
-
-    "close t":function(){
+    "close t":function(myticket){
       textContainer.textContent="Rate services for this ticket";
-      rateOrUpdatBtn.textContent="Rate"; 
+      rateBtn.textContent="Rate"; 
       buttonStatus["blur"]();
       rateBox.style.display='flex';
       rateBox.style.animation = 'rate 0.8s forwards';   
     },
-    "update t":function(){
-
+    "update t":function(myticket){
+        titleHelpDisk.value=myticket.title;
+        descriptionHelpDesk.value=myticket.description;
+        checkedRadio(prioriteysHelpDisk,myticket.priority);
         buttonStatus["blur"](); 
         stackCupdate.style.display="flex";
+        editingmsg.style.display="flex";
         stackCupdate.style.animation = 'rate 0.8s forwards'; 
-
-        
-
     }
 };
 
@@ -152,7 +169,7 @@ function UserTicket(ticket){
         <div class="to-margin">
          <p class="p-info">Priority </p>
           <i class="fa fa-share list-my-ticket-icon-size" aria-hidden="true"></i>
-         <p id="prio" class="p-info-t">Low</p>
+         <p id="prioticket" class="p-info-t">Low</p>
         </div>
         <div class="to-margin">
          <p class="p-info">Status </p>
@@ -163,7 +180,12 @@ function UserTicket(ticket){
             <i class="fa fa-desktop list-my-ticket-icon-size" aria-hidden="true"></i>
             <p id="issuetype" class="p-info-t">SW</p>
         </div>
-        <div class="to-margin">
+       
+      
+        
+      </div>
+        <div  style="margin-top:3px; display:flex; flex-dirction:row;justify-content: space-between;">
+         <div class="to-margin">
          <p class="p-info">Created at </p>
          <i class="fa fa-calendar list-my-ticket-icon-size" aria-hidden="true"></i>
          <p class="p-info-t">11-12-2025</p>
@@ -178,13 +200,14 @@ function UserTicket(ticket){
           <i class="fa fa-calendar list-my-ticket-icon-size" aria-hidden="true"></i>
          <p class="p-info-t">12-12-2025</p>
         </div>
-      
-         <div  style="margin-top:3px;"><button id="teckitbtn" class="closedbtn">TTT</button></div>
-      </div> `;
+        <button id="teckitbtn" class="closedbtn">TTT</button>
+        </div>
+      `;
       ticketUserUl.appendChild(listLi);
       
       let statusTicketBtn=listLi.querySelector("#teckitbtn");
-      let priority=listLi.querySelector("#prio");
+      let priority=listLi.querySelector("#prioticket");
+      priority.textContent=ticket.priority;
       let status=listLi.querySelector("#status");
       status.textContent=ticket.status;
       tekitStatusBtn(statusTicketBtn,status.textContent);
@@ -192,7 +215,7 @@ function UserTicket(ticket){
       status.style.color=statusColor[status.textContent.toLowerCase()];
       statusTicketBtn.addEventListener("click",function(){
            
-          buttonStatus[statusTicketBtn.textContent.toLowerCase()]();
+          buttonStatus[statusTicketBtn.textContent.toLowerCase()](ticket);
 
       });
 
@@ -206,6 +229,19 @@ cancelRateBtn.addEventListener("click",function(){
     rateBox.style.animation = 'hiderate 0.5s forwards';
     setTimeout(function(){
         rateBox.style.display='none';
+    },500) 
+  
+    blurContainer(tBox,'none','auto') ;
+  
+
+});
+
+cancelHelpDeskBtn.addEventListener("click",function(){
+    editingmsg.style.display='none';
+    stackCupdate.style.animation = 'hiderate 0.5s forwards';
+    setTimeout(function(){
+        stackCupdate.style.display='none';
+      
     },500) 
   
     blurContainer(tBox,'none','auto') ;

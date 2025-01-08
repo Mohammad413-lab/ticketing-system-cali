@@ -13,6 +13,9 @@ body{
   box-shadow: 0 5px 9px #E8E8E8; 
   padding-left: 10px;
   border-radius: 5px;
+  background: white;
+  overflow: hidden;
+  z-index: 1000;
 }
 
 
@@ -33,30 +36,23 @@ font-weight: bold;
 background: white;
 }
 .input1:focus{
-width: 400px;
-height: 50px;
-border: 0;
 box-shadow: 0px 0px 5px   #0fc0fc;
-border-radius: 2px;
-outline: none;
-font-size: 20px;
-background: whitesmoke;
-padding-left: 2px;
 }
+
 .input1,.ptwo{
     margin: 2px;
     padding: 0;
 }
 .iconsize{
 font-size: 25px;
-background: linear-gradient(to bottom right,#2e86c1,#1BA8E0 ,#3498db ,#87DAF6)  ;
+background: linear-gradient(to bottom right,#2e86c1,#1BA8E0 ,#3498db ,#87DAF6);
 background-clip:text;
 -webkit-text-fill-color: transparent;
 
 }
 .btn{
-width: 100px;
-height: 30px;
+width: 200px;
+height: 50px;
 background:linear-gradient(to bottom right,#2e86c1,#1BA8E0 ,#3498db ,#87DAF6)  ;
 color: whitesmoke;
 border: none;
@@ -66,20 +62,20 @@ border-radius: 5px;
 margin-left: 100px;
 }
 .textbtn{
-
 color:black;
 border: none;
 border-radius: 5px;
-margin-right: 20px;
 font-family: sans-serif;
-background-color: whitesmoke;
+background-color: white;
 }
 
 .ht{
 font-weight: bold;
-margin-left: 40%;
+display: flex;
+align-items: center;
+justify-content: center;
 font-family: sans-serif;
-background:linear-gradient(to bottom right,#2e86c1,#1BA8E0 ,#3498db ,#87DAF6)  ;
+background:linear-gradient(to bottom right,#2e86c1,#1BA8E0 ,#3498db ,#87DAF6);
 background-clip: text;
 -webkit-text-fill-color: transparent;
 font-family: sans-serif;
@@ -92,6 +88,7 @@ font-family: sans-serif;
     box-shadow: 0 5px 9px #E8E8E8; 
     padding-left: 10px;
     border-radius: 5px;
+    background: white;
     }
 
 .signupbtn{
@@ -141,7 +138,6 @@ button:hover {
 .companyimgone{
     width: 200px;
     height: 60px;
-   
     margin-bottom: 0px;
     border-radius: 10px 10px 0px 0px;
 }
@@ -177,8 +173,110 @@ button:hover {
     font-weight: bold;
     margin: 10px;
 }
+.whitetext:hover{
+    color: black;
+}
 
 .spacebetween{
     display: flex;
     justify-content: space-between;
 }
+
+.custom-select-addemp {
+    width: 400px;
+    padding: 3px;
+    border: none;
+    outline:none;
+    appearance: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    background: white;
+    box-shadow: 0 5px 9px #E8E8E8; 
+    overflow:scroll;
+
+}
+
+ 
+.custom-select-addemp option {
+    padding: 10px;
+    background-color: whitesmoke;
+    color:black;
+    font-family: sans-serif;
+    font-weight: bold;
+    border-radius: 0px;
+    font-size: 15px;
+
+}
+
+
+
+.custom-select-addemp option:checked {
+    background-color: #6699cc;
+    color: white;
+
+}
+
+
+
+.custom-select-addemp:focus{
+    border-radius: 0px;
+    box-shadow: 0px 0px 5px   #0fc0fc;
+    }
+
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px){
+
+.custom-select-addemp{
+        font-size: 22px;
+        width: 90%;
+      
+    }
+
+     
+.custom-select-addemp option {
+    font-size: 10px;
+}
+.signupinbox{
+    height: 850px;
+    width: 80vw;
+   }
+.input1{
+    width: 90%;
+    height: 100px;
+    font-size: 25px;
+}
+.input1::placeholder{
+    font-size: 30px;
+    color: #CECECE;
+    padding-left: 10px;
+}
+
+.signupbtn{
+    font-size: 25px;
+    height: 50px;
+}
+
+.companyimgone{
+    width: 300px;
+    height: 100px;
+}
+.loginbox{
+    width: 70vw;
+    height: 400px;
+}
+.pone{
+    font-size: 23px;
+}
+.textbtn{
+    font-size: 18px;
+}
+
+.btn{
+    font-size: 25px;
+
+}
+    }    

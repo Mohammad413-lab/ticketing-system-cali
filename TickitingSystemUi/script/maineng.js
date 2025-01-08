@@ -106,7 +106,7 @@ function assignTicketList(reviewModel){
                          <option value="4">Issue solved</option>
                      </select>
                     
-                     <div id="statuscolor" class="simplec">  </div>
+                     <div id="statuscolor" class="simplec" style="padding-top:15px;">  </div>
                     
                 </div>
                      </div>

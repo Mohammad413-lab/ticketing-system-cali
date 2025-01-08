@@ -44,9 +44,13 @@
       </div>
 
  
- 
- <div style="display: flex; flex-direction: row; margin-top: 20px; width: 100%;">
-  <button id="cancelratebtn" class="cancelratebtn ">Cancel</button>
+ <div>
+  <div style="margin: 10px;">
+  <input id="commentrate" type="text" class="input3" placeholder="comment"/>
+ </div>
+ </div>
+ <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; margin-top: 20px; width: 100%;">
+  <button id="cancelratebtn" class="cancelratebtn">Cancel</button>
   <button id="ratebtnok"class="okratebtn">Rate</button>
   </div>
  
@@ -57,41 +61,47 @@
 
 </div>
 
+<div class="editingmessage" style="overflow: auto; justify-content: center; align-items: center;">  <h3 id="note"  class="notestyle" >please edit your discription</h3></div>
  <div class="stack-container-update">
-  <h3 id="note"  class="notestyle">please edit your discription</h3>
   <div class="backgroundupdate">
-    <h4 class="txt3">Help disk !!</h4>
+    <h4 class="txt3">Update ticket</h4>
+    <div style="display: flex; align-items: start; justify-content: start; width: 100%;">
     <div style="display: flex; flex-direction: row; margin-bottom: 3px;">
-    <h6 class="txt2">Title</h6>
+    <h6 class="txtthelpdisk">Title :</h6>
     <input id="titlehelp" type="text" class="input3" placeholder="title"/>
   </div>
-  <div style="display: flex; flex-direction: row; margin-right: 50px; margin-bottom: 3px;">
-    <h6 class="txt2">Description</h6>
+    </div>
+
+  <div style="display: flex; flex-direction: row; margin-right: 0px; margin-bottom: 3px;">
   <textarea id="descreiptionhelp" class="textareatwo"  placeholder="description"></textarea>
   </div>
-  <div style="display: flex; flex-direction: row;">
-  <h6 class="txt2">Priority</h6>
-  <div>
+  <div style="display: flex; align-items: start; justify-content: start; width: 100%;">
+  <div style="display: flex; width: 100%; gap:35px; ">
+  <h6 class="txtthelpdisk">Priority :</h6>
+
 
       <label class="txt2">
-        <input id="lowhelp" type="radio" name="priority" value="Low" class="radio"/>
+        <input id="lowhelp" type="radio" name="priorityhelpdisk" value="low" class="radio"/>
         <span>Low</span>
       </label>
 
       <label class="txt2">
-        <input id="mediumhelp" type="radio" name="priority" value="Medium" class="radio"/>
+        <input id="mediumhelp" type="radio" name="priorityhelpdisk" value="medium" class="radio"/>
         <span>Medium</span>
       </label>
      
       <label class="txt2">
-        <input id="highhelp" type="radio" name="priority"  value="High" class ="radio"/>
+        <input id="highhelp" type="radio" name="priorityhelpdisk"  value="high" class ="radio"/>
         <span>High</span>
       </label>
+
 </div>
 </div>
-<div style="display: flex; flex-direction: row;">
-<h6 class="txt2">Issue type</h6>
-<div>
+
+<div style="display: flex; align-items: start; justify-content: start; width: 100%;">
+<div style="display: flex; gap: 20px; width: 100%; ">
+<h6 class="txtthelpdisk">Issue type:</h6>
+
 
     <label class="txt2">
       <input id="hwhelp" type="radio" name="typeissue" value="0" class="radio">
@@ -103,9 +113,12 @@
       <input id="swhelp" type="radio" name="typeissue" value="1" class="radio">
       <span>Software</span>
     </label>
+
   </div>
-  </div>
-  <div style="display: flex; flex-direction: row;  margin-top: 20px; width: 100%;">
+</div>
+
+
+  <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;  margin-top: 10px; width: 100%;">
     <button id="cancelupdate" class="cancelratebtn ">Cancel</button>
     <button id="updatebtn"class="okratebtn">Update</button>
     </div>

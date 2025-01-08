@@ -17,24 +17,23 @@ body {
     border:none;
     background: transparent;
     font-weight: bold;
-    font-size: 60%;
+    font-size: 100%;
     color: whitesmoke ;
-    width: 50%;
+    width: 200px;
+    height: 35px;
 
 }
 .btnstate:active{
     border: 1px solid whitesmoke;
     background: transparent;
     font-weight: bold;
-    font-size: 10;
+    font-size: 80%;
 }
 
 .btnstate:hover{
     border: 1px solid whitesmoke;
     border-radius: 2px;
-    background: transparent;;
-    font-weight: bold;
-    font-size: 65%;
+    font-size: 80%;
     color:whitesmoke;
     box-shadow: 0px 0px 10px whitesmoke;
    
@@ -146,7 +145,7 @@ body {
  }
 
  .input3{
-    width: 400px;
+    width: 325px;
     height: 30px;
     border: 0;
     box-shadow: 0 5px 9px #E8E8E8; 
@@ -165,17 +164,15 @@ body {
     
  } 
  .input3:focus{
-     width: 400px;
-     height: 30px;
-     border: 0;
+
      box-shadow: 0px 0px 5px   #0fc0fc;
-     border-radius: 2px;
-     outline: none;
-     padding-left: 5px;
-     font-family: sans-serif;
-     font-size: 15px;
-     background: whitesmoke;
-     padding-left: 5px;
+    
+   
+  
+    
+  
+   
+   
   }
  
 
@@ -216,18 +213,19 @@ h3{
     margin-top: 15px;
 }
 .stack-container {
-    max-width: 500px;
-    max-height: 200px;
+    min-width: 500px;
+    min-height: 300px;
     display:none;
     opacity: 0;
     animation-fill-mode: forwards;
     position: absolute;
+    box-shadow: 0px 0px 15px  #CECECE;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     overflow: hidden;
-
+    background: white;
     z-index: 2000;
    
     
@@ -235,6 +233,7 @@ h3{
   
 .stack-container-update {
     display:none;
+   
     opacity: 0;
     animation-fill-mode: forwards;
     position: absolute;
@@ -244,7 +243,7 @@ h3{
     border-radius: 10px;
     box-shadow: 0px 0px 15px  #CECECE;
     overflow: hidden;
-    background: whitesmoke;
+    background: white;
     z-index: 2000; 
   }
   .backgroundcontain{
@@ -252,10 +251,9 @@ h3{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 500px;
+    height: 300px;
     background: white;
-    box-shadow: 0px 0px 15px  #CECECE;
     border-radius: 10px;
     overflow: hidden;
   
@@ -342,8 +340,8 @@ h3{
 
 
 .okratebtn{
-    width: 100%;
-    height: 30px;
+    width: 200px;
+    height: 35px;
     background: linear-gradient(to bottom right,#2e86c1,#1BA8E0 ,#3498db ,#87DAF6)  ;
     color: whitesmoke;
     border: none;
@@ -355,8 +353,8 @@ h3{
 
 
 .cancelratebtn{
-        width: 100%;
-        height: 30px;
+        width: 200px;
+        height: 35px;
         background-color: #FF7F7F;
         color: whitesmoke;
         border: none;
@@ -384,10 +382,9 @@ h3{
 
 
 .notestyle{
-    font-size: 100%;
+    font-size: 25px;
     color: #CECECE;
-    text-overflow: ellipsis;
-    
+    font-weight: normal;  
 }
 
 
