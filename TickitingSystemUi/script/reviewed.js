@@ -8,7 +8,7 @@ import { assignColor,rejectColor,cancelColor ,linearColor} from "./colors.js";
 import { UserInfoModel } from "./models/usermodel.js";
 import { changeScrollColor } from "./functions/scroll.js";
 import { timer } from "./functions/timer.js";
-import { changeDesign } from "./functions/changedesign.js";
+import { ApiConsumer } from "./models/apiconsumer.js";
 
 function isReview(txt){
   return txt=="reviewed"?true:false;
@@ -514,4 +514,19 @@ allBtn.addEventListener("click",function(){
   
   });
 
-console.log(screen.width);
+let request = new ApiConsumer;
+
+request.onloadd=function(){
+  console.log("this is post request")
+};
+request.data={
+  title: 'I am in love with some.',
+  userId: 88,
+};
+let response=await request.post("https://dummyjson.com/posts/add");
+console.log(response);
+
+
+
+
+
